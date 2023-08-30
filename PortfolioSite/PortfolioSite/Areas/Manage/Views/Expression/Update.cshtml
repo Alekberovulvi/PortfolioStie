@@ -1,0 +1,21 @@
+﻿@model PortfolioSite.Models.Testimonials
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update</h1>
+<br />
+
+@using (Html.BeginForm("Update", "Expression", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id)
+    @Html.TextBoxFor(x=>x.Id, new {@class ="form-control", @readonly ="readonly"})
+        <br />
+    @Html.LabelFor(x=>x.Title)
+    @Html.TextBoxFor(x=>x.Title, new {@class ="form-control"})
+        <br />
+        <button class="btn btn-success">Update</button>
+        <a class="btn btn-warning" asp-action="Index" asp-controller="Expression">Cancel</a>
+}

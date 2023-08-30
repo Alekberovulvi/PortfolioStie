@@ -1,0 +1,27 @@
+﻿@model PortfolioSite.Models.ContactLocation
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update</h1>
+
+<br />
+
+@using (Html.BeginForm("Update", "Contact", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id)
+    @Html.TextBoxFor(x=>x.Id, new {@class ="form-control", @readonly ="readonly"})
+        <br />
+    @Html.LabelFor(x=>x.Icon)
+    @Html.TextBoxFor(x=>x.Icon, new {@class ="form-control"})
+        <br />
+    @Html.LabelFor(x=>x.Name)
+    @Html.TextBoxFor(x=>x.Name, new {@class ="form-control"})
+        <br />
+    @Html.LabelFor(x=>x.Description)
+    @Html.TextBoxFor(x=>x.Description, new {@class ="form-control"})
+    <br />
+        <button class="btn btn-success">Update</button>
+        <a class="btn btn-warning" asp-action="Index" asp-controller="Contact">Cancel</a>
+}

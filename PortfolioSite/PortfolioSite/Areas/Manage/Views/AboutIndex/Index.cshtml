@@ -1,0 +1,44 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Haqqimda</h1>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Icon</th>
+        <th>Brithday</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Freelance</th>
+        <th>WebSite</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+
+    <tr>
+        @foreach (var item in Model.AboutsSites)
+        {
+            <th>@item.Id</th>
+            <th>@item.Icon</th>
+            <th>@item.Brithday</th>
+            <th>@item.Phone</th>
+            <th>@item.Email</th>
+            <th>@item.City</th>
+            <th>@item.Freelance</th>
+            <th>@item.Website</th>
+            <td><a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success"><i class="fa-solid fa-pen-nib"></i> Update</a></td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+            </td>
+        }
+    </tr>
+</table>
+<a asp-controller="AboutIndex" asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create</a>

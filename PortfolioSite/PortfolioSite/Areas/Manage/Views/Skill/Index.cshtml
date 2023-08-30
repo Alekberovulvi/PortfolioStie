@@ -1,0 +1,66 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Skill</h1>
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+
+    <tr>
+        <th>@Model.Skill.Id</th>
+        <td>@Model.Skill.Title</td>
+        <td>@Model.Skill.Description</td>
+        <td><a asp-action="Update" asp-route-id="@Model.Skill.Id" class="btn btn-success"><i class="fa-solid fa-pen-nib"></i> Update</a></td>
+        <td>
+            <a asp-action="Delete" asp-route-id="@Model.Skill.Id" class="btn btn-danger" onsubmit="return confirm('Are you sure you want to delete this CV?')><i class="fa-solid fa-trash"></i> Delete</a>
+        </td>
+    </tr>
+</table>
+<a asp-controller="Skill" asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create</a>
+
+
+<br />
+<br />
+<br />
+<h1>Percent</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Percent</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+        @foreach (var item in Model.Percents)
+        {
+    <tr>
+
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.SPercent</td>
+            <td>@item.Min</td>
+            <td>@item.Max</td>
+            <td><a asp-action="Pupdate" asp-route-id="@item.Id" class="btn btn-success"><i class="fa-solid fa-pen-nib"></i>Update</a></td>
+            <td><a asp-action="Pdelete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-pen-nib"></i>Delete</a></td>
+        </tr>
+
+        }
+</table>
+<a asp-controller="Skill" asp-action="Pcreate" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create</a>

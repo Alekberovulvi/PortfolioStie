@@ -1,0 +1,36 @@
+﻿@model PortfolioSite.Models.AboutsSite
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.Icon)
+    @Html.TextBoxFor(x=>x.Icon, new {@class ="form-control"})
+    <br/>
+    @Html.LabelFor(x=>x.Brithday)
+    @Html.TextBoxFor(x=>x.Brithday, new {@class ="form-control"})
+    <br/>
+    @Html.LabelFor(x=>x.Phone)
+    @Html.TextBoxFor(x=>x.Phone, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Email)
+    @Html.TextBoxFor(x=>x.Email, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.City)
+    @Html.TextBoxFor(x=>x.City, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Freelance)
+    @Html.TextBoxFor(x=>x.Freelance, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Website)
+    @Html.TextBoxFor(x=>x.Website, new {@class ="form-control"})
+    <br />
+    <button class="btn btn-primary">Create</button>
+    <a class="btn btn-warning" asp-action="Index" asp-controller="AboutIndex">Cancel</a>
+</form>

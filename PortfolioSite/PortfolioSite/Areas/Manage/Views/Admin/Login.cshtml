@@ -1,0 +1,45 @@
+﻿@model LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="~/manage/css/main.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="contact-form">
+            <img src="~/manage/img/admin.jpg" class="admin-img">
+            <h2>Admin Login</h2>
+            <form method="post" asp-action="Login" asp-controller="Admin">
+                <input type="hidden" name="ReturnUrl" value="@ViewData["ReturnUrl"]" />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" required/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input type="password" asp-for="Password" class="form-control"  />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <input type="submit" class="logbtn" value="Login">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,25 @@
+﻿@model PortfolioSite.Models.SIcons
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update</h1>
+<br />
+
+@using (Html.BeginForm("Update", "Icon", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id)
+    @Html.TextBoxFor(x=>x.Id, new {@class ="form-control", @readonly ="readonly"})
+    <br />
+    @Html.LabelFor(x=>x.Social)
+    @Html.TextBoxFor(x=>x.Social, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Link)
+    @Html.TextBoxFor(x=>x.Link, new {@class ="form-control"})
+    <br />
+    <button class="btn btn-success">Update</button>
+    <a class="btn btn-warning" asp-action="Index" asp-controller="Icon">Cancel</a>
+}
+

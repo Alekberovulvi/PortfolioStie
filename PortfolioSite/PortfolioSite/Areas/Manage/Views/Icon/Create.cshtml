@@ -1,0 +1,20 @@
+﻿@model PortfolioSite.Models.SIcons
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.Social)
+    @Html.TextBoxFor(x=>x.Social, new {@class ="form-control"})
+    <br/>
+    @Html.LabelFor(x=>x.Link)
+    @Html.TextBoxFor(x=>x.Link, new {@class ="form-control"})
+    <br />
+    <button class="btn btn-primary">Create</button>
+    <a class="btn btn-warning" asp-action="Index" asp-controller="Icon">Cancel</a>
+</form>

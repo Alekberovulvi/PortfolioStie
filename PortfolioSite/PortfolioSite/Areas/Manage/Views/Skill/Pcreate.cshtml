@@ -1,0 +1,27 @@
+﻿@model PortfolioSite.Models.Percent
+
+@{
+    ViewData["Title"] = "Pcreate";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Pcreate</h1>
+
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.Name)
+    @Html.TextBoxFor(x=>x.Name, new {@class ="form-control"})
+    <br/>
+    @Html.LabelFor(x=>x.SPercent)
+    @Html.TextBoxFor(x=>x.SPercent, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Min)
+    @Html.TextBoxFor(x=>x.Min, new {@class ="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.Max)
+    @Html.TextBoxFor(x=>x.Max, new {@class ="form-control"})
+    <br />
+    <button class="btn btn-primary">Create</button>
+    <a class="btn btn-warning" asp-action="Index" asp-controller="Skill">Cancel</a>
+</form>

@@ -1,0 +1,28 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ikonlar</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Icons</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model.SIcons)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td><a href="">@Html.Raw(item.Social)</a></td>
+            <td><a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success"><i class="fa-solid fa-pen-nib"></i> Update</a></td>
+            <td><a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</a></td>
+        </tr>
+    }
+</table>
+<a asp-controller="Icon" asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create</a>
